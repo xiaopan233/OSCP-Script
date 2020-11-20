@@ -15,7 +15,7 @@ the payload for testing sql inject : [sql_inject/sqltest.txt](https://github.com
 
 [infomation_gathering/info.sh](https://github.com/xiaopan233/OSCP-Script/blob/main/infomation_gathering/info.sh)
 
-[infomation_gathering/combined_checks.txt](https://github.com/xiaopan233/OSCP-Script/blob/main/infomation_gathering/combined_checks.txt) ：This checklist is search from github.
+[infomation_gathering/combined_checks.txt](https://github.com/xiaopan233/OSCP-Script/blob/main/infomation_gathering/combined_checks.txt) ：This checklist is search from github.I forget where it from =.=
 </br>
 # For file transmit
 
@@ -26,4 +26,7 @@ windows command to use FTP : [file_transfer/windows/ftp_client.txt](https://gith
 powershell for file transmit : [file_transfer/windows/powershell.txt](https://github.com/xiaopan233/OSCP-Script/blob/main/file_transfer/windows/powershell.txt)
 
 vbscript for wget : [file_transfer/windows/wget.txt](https://github.com/xiaopan233/OSCP-Script/blob/main/file_transfer/windows/wget.txt)
+</br>
+# For privilege escalation 
 
+[privesc/windows-exploit-suggester.py](https://github.com/xiaopan233/OSCP-Script/blob/main/privesc/windows-exploit-suggester.py) : It is search from github。[source](https://github.com/AonCyberLabs/Windows-Exploit-Suggester)
