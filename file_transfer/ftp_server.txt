@@ -1,0 +1,12 @@
+sudo vim /etc/vsftpd.conf
+
+#configure the vsftpd.conf:
+
+local_enable=YES
+chroot_local_user=YES
+chroot_list_enable=YES
+allow_writeable_chroot=YES  #this item is very important
+
+#add a ftp user
+sudo useradd tmp -d /home/tmp -m
+passwd tmp

