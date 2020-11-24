@@ -30,3 +30,13 @@ vbscript for wget : [file_transfer/windows/wget.txt](https://github.com/xiaopan2
 # For privilege escalation 
 
 [privesc/windows-exploit-suggester.py](https://github.com/xiaopan233/OSCP-Script/blob/main/privesc/windows-exploit-suggester.py) : It is search from github。[source](https://github.com/AonCyberLabs/Windows-Exploit-Suggester)
+
+</br>
+# For UDF getshell
+
+[mysql/udf.txt](https://github.com/xiaopan233/OSCP-Script/blob/main/mysql/udf.txt) : mysql udf checklist
+
+</br>
+# For generate shell
+
+[shell/msfvenom.txt](https://github.com/xiaopan233/OSCP-Script/blob/main/shell/msfvenom.txt) : a payload list of msfvenom
