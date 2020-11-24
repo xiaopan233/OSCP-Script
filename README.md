@@ -41,3 +41,8 @@ vbscript for wget : [file_transfer/windows/wget.txt](https://github.com/xiaopan2
 ## For generate shell
 
 [shell/msfvenom.txt](https://github.com/xiaopan233/OSCP-Script/blob/main/shell/msfvenom.txt) : a payload list of msfvenom
+</br>
+
+## For password attack
+
+[passwordAttack/cutdic.txt](https://github.com/xiaopan233/OSCP-Script/blob/main/passwordAttack/cutdic.txt) :  a command to cut the password list file into a half.Then you can get the head of password list file and the end of password list for password Cracker program
