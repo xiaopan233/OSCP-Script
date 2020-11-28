@@ -33,9 +33,9 @@ vbscript for wget : [file_transfer/windows/wget.txt](https://github.com/xiaopan2
 ## For privilege escalation
 
 [privesc/windows-exploit-suggester.py](https://github.com/xiaopan233/OSCP-Script/blob/main/privesc/windows-exploit-suggester.py) : It is search from github。[source](https://github.com/AonCyberLabs/Windows-Exploit-Suggester)
+
 [privesc/suid.txt](https://github.com/xiaopan233/OSCP-Script/blob/main/privesc/suid.txt) : suid privilege escalation
 recommand website : https://gtfobins.github.io/
-
 </br>
 
 ## For UDF getshell
@@ -46,12 +46,15 @@ recommand website : https://gtfobins.github.io/
 ## For shell
 
 [shell/msfvenom.txt](https://github.com/xiaopan233/OSCP-Script/blob/main/shell/msfvenom.txt) : a payload list of msfvenom
+
 [shell/bash.txt](https://github.com/xiaopan233/OSCP-Script/blob/main/shell/bash.txt) : execute a bash
 </br>
 
 ## For buffer overflow
 [bof/badchars_create.py](https://github.com/xiaopan233/OSCP-Script/tree/main/bof/badchars_create.py) : create a bad chars list
+
 [bof/badchars_check.py](https://github.com/xiaopan233/OSCP-Script/tree/main/bof/badchars_check.py) : check if exists bad char
+</br>
 
 ## For password attack
 
