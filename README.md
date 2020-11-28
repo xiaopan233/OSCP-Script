@@ -15,7 +15,7 @@ the payload for testing sql inject : [sql_inject/sqltest.txt](https://github.com
 </br>
 ## For gathering the information
 
-[infomation_gathering/info.sh](https://github.com/xiaopan233/OSCP-Script/blob/main/infomation_gathering/info.sh)
+[infomation_gathering/info.sh](https://github.com/xiaopan233/OSCP-Script/blob/main/infomation_gathering/info.sh) : gather general infomation
 
 [infomation_gathering/combined_checks.txt](https://github.com/xiaopan233/OSCP-Script/blob/main/infomation_gathering/combined_checks.txt) ：This checklist is search from github.I forget where it from =.=
 </br>
@@ -35,6 +35,7 @@ vbscript for wget : [file_transfer/windows/wget.txt](https://github.com/xiaopan2
 [privesc/windows-exploit-suggester.py](https://github.com/xiaopan233/OSCP-Script/blob/main/privesc/windows-exploit-suggester.py) : It is search from github。[source](https://github.com/AonCyberLabs/Windows-Exploit-Suggester)
 
 [privesc/suid.txt](https://github.com/xiaopan233/OSCP-Script/blob/main/privesc/suid.txt) : suid privilege escalation
+
 recommand website : https://gtfobins.github.io/
 </br>
 
