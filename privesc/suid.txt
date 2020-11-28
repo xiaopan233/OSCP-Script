@@ -4,3 +4,9 @@ nmap
 nmap -V
 nmap --interactive
 !sh
+
+========
+man
+
+man id
+!/bin/sh
