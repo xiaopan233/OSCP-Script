@@ -2,4 +2,14 @@
 
 linux/x86/shell_reverse_tcp
 
+windows/shell_reverse_tcp
+
 php/reverse_php
+
+# encoder:
+
+x86/shikata_ga_nai
+
+#bad chars
+
+\x00\x0a\x0d

