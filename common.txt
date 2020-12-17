@@ -26,3 +26,7 @@ wmic service where caption="Apache" get name,startmode
 
 
 smbclient -L //10.11.1.8 --option='client min protocol=NT1'
+
+
+VNC ctrl+alt+delete:
+press f8

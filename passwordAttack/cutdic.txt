@@ -1,1 +1,0 @@
-f=FILENAME;a=`cat $f|wc -l`;b=`expr $a / 2`;c=`expr $b + 2`;head -n $b $f > ${f}_1.txt;tail -n $c $f|tac > ${f}_2.txt
