@@ -1,6 +1,0 @@
-lshell
-
-echo && 'bash'
-echo || 'bash'
-ll non-existent-dir || 'bash'
-echo os.system('/bin/bash')

@@ -1,0 +1,5 @@
+Learn How to re-write a msf-exploit in python
+https://ivanitlearning.wordpress.com/2019/09/01/rewriting-a-ruby-msf-exploit-in-python/
+
+A greate many Exploits:
+https://github.com/vulhub/vulhub

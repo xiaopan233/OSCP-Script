@@ -1,0 +1,2 @@
+Frist, Edit the knockedPort.sh
+Then,Run the knock.sh with sudo.Remember must spesify a arg: TARGET

